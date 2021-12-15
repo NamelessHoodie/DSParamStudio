@@ -121,6 +121,7 @@ namespace StudioCore.MsbEditor
             _decorators.Add("EquipParamGoods", new FMGItemParamDecorator(FMGBank.ItemCategory.Goods));
             _decorators.Add("EquipParamProtector", new FMGItemParamDecorator(FMGBank.ItemCategory.Armor));
             _decorators.Add("EquipParamWeapon", new FMGItemParamDecorator(FMGBank.ItemCategory.Weapons));
+            //Do This Later Hoodie Do Not Forget To Implement This For New Item Categorys
         }
 
         public override void DrawEditorMenu()

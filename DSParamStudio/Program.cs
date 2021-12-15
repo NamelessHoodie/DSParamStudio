@@ -27,6 +27,10 @@ namespace DSMapStudio
 
             SDL_version version;
             Sdl2Native.SDL_GetVersion(&version);
+#if DEBUG
+            new StudioCore.MapStudioNew().Run();
+#endif
+#if RELEASE
             try
             {
                 new StudioCore.MapStudioNew().Run();
@@ -36,6 +40,7 @@ namespace DSMapStudio
                 MessageBox.Show(e.Message+"\n"+e.StackTrace, "Unhandled Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw e;
             }
+#endif
         }
 
         static void CrashHandler(object sender, UnhandledExceptionEventArgs args)

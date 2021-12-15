@@ -133,9 +133,13 @@ namespace StudioCore
             else if (exePath.ToLower().Contains("eboot.bin"))
             {
                 var path = Path.GetDirectoryName(exePath);
-                if (Directory.Exists($@"{path}\dvdroot_ps4"))
+                if (Directory.Exists(Path.Combine(path, "dvdroot_ps4")))
                 {
                     type = GameType.Bloodborne;
+                }
+                else if (Directory.Exists(Path.Combine(path, "asset")))
+                {
+                    type = GameType.EldenRingNetworkTest;
                 }
                 else
                 {
@@ -334,6 +338,9 @@ namespace StudioCore
                     break;
                 case GameType.Sekiro:
                     game = "SDT";
+                    break;
+                case GameType.EldenRingNetworkTest:
+                    game = "EldenRingNetworkTest";
                     break;
                 default:
                     throw new Exception("Game type not set");

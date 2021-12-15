@@ -614,7 +614,7 @@ namespace Veldrid.Vk
 #if DEBUG
             if (Debugger.IsAttached)
             {
-                Debugger.Break();
+                //Debugger.Break();
             }
 #endif
 
