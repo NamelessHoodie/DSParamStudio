@@ -187,6 +187,7 @@ namespace StudioCore
         /// <returns>true if the game was autodetected</returns>
         public bool SetGameRootDirectoryByExePath(string exePath)
         {
+            //Deprecated. Use GetGameTypeForExePath
             GameRootDirectory = Path.GetDirectoryName(exePath);
             if (exePath.ToLower().Contains("darksouls.exe"))
             {
@@ -533,6 +534,7 @@ namespace StudioCore
                 {
                     var mapid = pathElements[i];
                     i++;
+                    //Did not update this to elden ring cuz not DSMapStudio.
                     if (pathElements[i].Equals("model"))
                     {
                         i++;

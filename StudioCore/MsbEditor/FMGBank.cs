@@ -288,6 +288,7 @@ namespace StudioCore.MsbEditor
 
         public static List<FMG.Entry> GetEntriesOfCategoryAndType(ItemCategory cat, ItemType type)
         {
+            //FoxyHooligans asked for improvements on the fmg editor, change this to render fmgs with an unknown ItemCategory and/or Type.
             var list = new List<FMG.Entry>();
             foreach (var fmg in _fmgs)
             {
