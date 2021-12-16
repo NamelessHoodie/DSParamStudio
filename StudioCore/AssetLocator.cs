@@ -212,6 +212,10 @@ namespace StudioCore
                     Type = GameType.Bloodborne;
                     GameRootDirectory = GameRootDirectory + $@"\dvdroot_ps4";
                 }
+                else if (Directory.Exists(Path.Combine(GameRootDirectory, "asset")))
+                {
+                    Type = GameType.EldenRingNetworkTest;
+                }
                 else
                 {
                     Type = GameType.DemonsSouls;
@@ -297,6 +301,7 @@ namespace StudioCore
             {
                 path = $@"msg\engus\item_dlc2.msgbnd.dcx";
             }
+
             AssetDescription ad = new AssetDescription();
             if (writemode)
             {
