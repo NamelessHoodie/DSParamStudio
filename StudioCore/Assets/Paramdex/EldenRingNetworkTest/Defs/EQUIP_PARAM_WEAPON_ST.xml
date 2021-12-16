@@ -14,6 +14,7 @@
     <Field Def="s32 fixPrice = 800" />
     <Field Def="s32 basicPrice = 130" />
     <Field Def="s32 sellValue = 100" />
+	<Field Def="s32 iVar0" />
     <Field Def="f32 correctStrength" />
     <Field Def="f32 correctAgility" />
     <Field Def="f32 corretMagic" />
@@ -49,11 +50,9 @@
     <Field Def="f32 antUndeadDamageRate" />
     <Field Def="f32 antHollowDamageRate" />
     <Field Def="f32 antAbyssalDamageRate" />
-    <Field Def="s32 vagrantItemLotId = 100700" />
-    <Field Def="s32 vagrantBonusEneDropItemLotId = 100710" />
-    <Field Def="s32 vagrantItemEneDropItemLotId = 100720" />
-	<Field Def="s16 placeholder1" />
-	<Field Def="s16 placeholder2" />
+    <Field Def="f32 fVar1 = 100700" />
+    <Field Def="f32 fVar2 = 100710" />
+    <Field Def="f32 fVar3 = 100720" />
     <Field Def="s16 equipModelId" />
     <Field Def="s16 iconId" />
     <Field Def="s16 durability = 80" />
@@ -253,8 +252,26 @@
     <Field Def="u8 WepSpMask6:1" />
     <Field Def="u8 WepSpMask7:1" />
     <Field Def="u8 Unk65" />
-    <Field Def="s32 Unk66 = 650" />
+    <Field Def="f32 Unk66" />
     <Field Def="s16 SpEff9600 = 310" />
-    <Field Def="dummy8 pad1[38]" />
+	<Field Def="s16 sVar0" />
+	<Field Def="f32 fVar4" />
+	<Field Def="s32 iVar2" />
+	<Field Def="s32 iVar3" />
+	<Field Def="s32 iVar4" />
+	<Field Def="s32 iVar5" />
+	<Field Def="u32 iVar6" />
+	<Field Def="u32 iVar7" />
+	<Field Def="u32 iVar8" />
+	<Field Def="u32 iVar9" />
+	<Field Def="u32 iVar10" />
+	<Field Def="u32 iVar11" />
+	<Field Def="s32 iVar12" />
+	<Field Def="s32 iVar13" />
+	<Field Def="s32 iVar14" />
+	<Field Def="f32 fVar5" />
+	<Field Def="f32 fVar6" />
+	<Field Def="f32 fVar7" />
+	<Field Def="s32 iVar18" />
   </Fields>
 </PARAMDEF>
