@@ -133,13 +133,9 @@ namespace StudioCore
             else if (exePath.ToLower().Contains("eboot.bin"))
             {
                 var path = Path.GetDirectoryName(exePath);
-                if (Directory.Exists(Path.Combine(path, "dvdroot_ps4")))
+                if (Directory.Exists($@"{path}\dvdroot_ps4"))
                 {
                     type = GameType.Bloodborne;
-                }
-                else if (Directory.Exists(Path.Combine(path, "asset")))
-                {
-                    type = GameType.EldenRingNetworkTest;
                 }
                 else
                 {
@@ -187,7 +183,6 @@ namespace StudioCore
         /// <returns>true if the game was autodetected</returns>
         public bool SetGameRootDirectoryByExePath(string exePath)
         {
-            //Deprecated. Use GetGameTypeForExePath
             GameRootDirectory = Path.GetDirectoryName(exePath);
             if (exePath.ToLower().Contains("darksouls.exe"))
             {
@@ -211,10 +206,6 @@ namespace StudioCore
                 {
                     Type = GameType.Bloodborne;
                     GameRootDirectory = GameRootDirectory + $@"\dvdroot_ps4";
-                }
-                else if (Directory.Exists(Path.Combine(GameRootDirectory, "asset")))
-                {
-                    Type = GameType.EldenRingNetworkTest;
                 }
                 else
                 {
@@ -301,7 +292,6 @@ namespace StudioCore
             {
                 path = $@"msg\engus\item_dlc2.msgbnd.dcx";
             }
-
             AssetDescription ad = new AssetDescription();
             if (writemode)
             {
@@ -344,9 +334,6 @@ namespace StudioCore
                     break;
                 case GameType.Sekiro:
                     game = "SDT";
-                    break;
-                case GameType.EldenRingNetworkTest:
-                    game = "EldenRingNetworkTest";
                     break;
                 default:
                     throw new Exception("Game type not set");
@@ -539,7 +526,6 @@ namespace StudioCore
                 {
                     var mapid = pathElements[i];
                     i++;
-                    //Did not update this to elden ring cuz not DSMapStudio.
                     if (pathElements[i].Equals("model"))
                     {
                         i++;

@@ -26,9 +26,7 @@ namespace StudioCore.MsbEditor
             FMGBank.ItemCategory.Locations,
             FMGBank.ItemCategory.Rings,
             FMGBank.ItemCategory.Spells,
-            FMGBank.ItemCategory.Weapons,
-            FMGBank.ItemCategory.Gems,
-            FMGBank.ItemCategory.AshesOfWar
+            FMGBank.ItemCategory.Weapons
         };
 
         private FMGBank.ItemCategory _activeCategory = FMGBank.ItemCategory.None;
@@ -85,8 +83,6 @@ namespace StudioCore.MsbEditor
             ImGui.BeginChild("categories");
             foreach (var cat in _displayCategories)
             {
-                //Bad! Do Not ToString Enum Names in rendering code it's slow as shit, NamelessPrudie here.
-                //Rendering of Text Editor Categories
                 if (ImGui.Selectable($@" {cat.ToString()}", cat == _activeCategory))
                 {
                     _activeCategory = cat;

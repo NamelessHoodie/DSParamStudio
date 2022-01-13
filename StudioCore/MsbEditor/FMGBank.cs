@@ -16,8 +16,6 @@ namespace StudioCore.MsbEditor
         public enum ItemCategory
         {
             None,
-            Gems,
-            AshesOfWar,
             Goods,
             Weapons,
             Armor,
@@ -33,9 +31,6 @@ namespace StudioCore.MsbEditor
             Title,
             Summary,
             Description,
-            //Elden Ring Network Test
-            Dialog, 
-            Effect,
         }
 
         /// <summary>
@@ -64,19 +59,6 @@ namespace StudioCore.MsbEditor
             SummarySpells = 28,
             DescriptionSpells = 29,
             DescriptionSkills = 40,
-
-
-
-            //Elden Ring Network Test
-            GemName = 35,
-            GemInfo = 36,
-            GemCaption = 37,
-            GoodsDialog = 41,
-            ArtsName = 42,
-            ArtsCaption = 43,
-            WeaponEffect = 44,
-            GemEffect = 45,
-            GoodsInfo2 = 46,
 
             // DS3 DLC1
             TitleGoodsDLC1 = 210,
@@ -137,14 +119,6 @@ namespace StudioCore.MsbEditor
         {
             switch(ftype)
             {
-                case ItemFMGTypes.GemName:
-                case ItemFMGTypes.GemInfo:
-                case ItemFMGTypes.GemCaption:
-                case ItemFMGTypes.GemEffect:
-                    return ItemCategory.Gems;
-                case ItemFMGTypes.ArtsName:
-                case ItemFMGTypes.ArtsCaption:
-                    return ItemCategory.AshesOfWar;
                 case ItemFMGTypes.TitleTest:
                 case ItemFMGTypes.TitleTest2:
                 case ItemFMGTypes.TitleTest3:
@@ -159,8 +133,6 @@ namespace StudioCore.MsbEditor
                 case ItemFMGTypes.TitleGoods:
                 case ItemFMGTypes.TitleGoodsDLC1:
                 case ItemFMGTypes.TitleGoodsDLC2:
-                case ItemFMGTypes.GoodsDialog:
-                case ItemFMGTypes.GoodsInfo2:
                     return ItemCategory.Goods;
                 case ItemFMGTypes.DescriptionWeapons:
                 case ItemFMGTypes.DescriptionWeaponsDLC1:
@@ -169,7 +141,6 @@ namespace StudioCore.MsbEditor
                 case ItemFMGTypes.TitleWeapons:
                 case ItemFMGTypes.TitleWeaponsDLC1:
                 case ItemFMGTypes.TitleWeaponsDLC2:
-                case ItemFMGTypes.WeaponEffect:
                     return ItemCategory.Weapons;
                 case ItemFMGTypes.DescriptionArmor:
                 case ItemFMGTypes.DescriptionArmorDLC1:
@@ -232,8 +203,6 @@ namespace StudioCore.MsbEditor
                 case ItemFMGTypes.DescriptionSpellsDLC1:
                 case ItemFMGTypes.DescriptionSpellsDLC2:
                 case ItemFMGTypes.DescriptionSkills:
-                case ItemFMGTypes.ArtsCaption:
-                case ItemFMGTypes.GemCaption:
                     return ItemType.Description;
                 case ItemFMGTypes.SummaryGoods:
                 case ItemFMGTypes.SummaryGoodsDLC1:
@@ -246,8 +215,6 @@ namespace StudioCore.MsbEditor
                 case ItemFMGTypes.SummarySpells:
                 case ItemFMGTypes.SummarySpellsDLC1:
                 case ItemFMGTypes.SummarySpellsDLC2:
-                case ItemFMGTypes.GoodsInfo2:
-                case ItemFMGTypes.GemInfo:
                     return ItemType.Summary;
                 case ItemFMGTypes.TitleGoods:
                 case ItemFMGTypes.TitleGoodsDLC1:
@@ -273,14 +240,7 @@ namespace StudioCore.MsbEditor
                 case ItemFMGTypes.TitleTest:
                 case ItemFMGTypes.TitleTest2:
                 case ItemFMGTypes.TitleTest3:
-                case ItemFMGTypes.ArtsName:
-                case ItemFMGTypes.GemName:
                     return ItemType.Title;
-                case ItemFMGTypes.GoodsDialog:
-                    return ItemType.Dialog;
-                case ItemFMGTypes.GemEffect:
-                case ItemFMGTypes.WeaponEffect:
-                    return ItemType.Effect;
                 default:
                     throw new Exception("Unrecognized FMG type");
             }
@@ -288,7 +248,6 @@ namespace StudioCore.MsbEditor
 
         public static List<FMG.Entry> GetEntriesOfCategoryAndType(ItemCategory cat, ItemType type)
         {
-            //FoxyHooligans asked for improvements on the fmg editor, change this to render fmgs with an unknown ItemCategory and/or Type.
             var list = new List<FMG.Entry>();
             foreach (var fmg in _fmgs)
             {

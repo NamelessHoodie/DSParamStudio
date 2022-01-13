@@ -462,7 +462,7 @@ namespace StudioCore.MsbEditor
                 {
                     vparamDir = LoadParamsDS3();
                 }
-                if (AssetLocator.Type == GameType.Bloodborne || AssetLocator.Type == GameType.Sekiro || AssetLocator.Type == GameType.EldenRingNetworkTest)
+                if (AssetLocator.Type == GameType.Bloodborne || AssetLocator.Type == GameType.Sekiro)
                 {
                     vparamDir = LoadParamsBBSekrio();
                 }
@@ -490,7 +490,7 @@ namespace StudioCore.MsbEditor
                         {
                             LoadVParamsDS3(vparamDir);
                         }
-                        if (AssetLocator.Type == GameType.Bloodborne || AssetLocator.Type == GameType.Sekiro || AssetLocator.Type == GameType.EldenRingNetworkTest)
+                        if (AssetLocator.Type == GameType.Bloodborne || AssetLocator.Type == GameType.Sekiro)
                         {
                             LoadVParamsBBSekrio(vparamDir);
                         }
@@ -810,7 +810,7 @@ namespace StudioCore.MsbEditor
             {
                 SaveParamsDS3(loose);
             }
-            if (AssetLocator.Type == GameType.Bloodborne || AssetLocator.Type == GameType.Sekiro || AssetLocator.Type == GameType.EldenRingNetworkTest)
+            if (AssetLocator.Type == GameType.Bloodborne || AssetLocator.Type == GameType.Sekiro)
             {
                 SaveParamsBBSekiro();
             }
